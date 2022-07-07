@@ -15,7 +15,7 @@ let employeesLevels = ["Junior", "Mid-Senior", "Senior"]
 Employee.prototype.salary= function () {
     for (let i=0; i<employeesLevels.length; i++)
     if (this.level === employeesLevels[i]){
-        this.salary = Math.random()*500+(500*(i+1))
+        this.salary = Math.random()*500+(500*(i+1)+1)
         this.salary-= this.salary*0.075
         return this.salary=Math.floor(this.salary)}}
 
