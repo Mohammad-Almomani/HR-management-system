@@ -16,8 +16,7 @@ Employee.prototype.salary= function () {
     for (let i=0; i<employeesLevels.length; i++)
     if (this.level.toLowerCase () === employeesLevels[i]){
         this.salary = Math.random()*500+(500*(i+1)+1)
-        this.salary-= this.salary*0.075
-        return this.salary=Math.floor(this.salary)}}
+        return this.salary=  Math.floor(this.salary- this.salary*0.075)}}
 
 Employee.prototype.printInfo = function () { document.write(`<p>${this["Full Name"]}: ${this.salary()} JD</p>`)}
 
