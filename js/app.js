@@ -10,11 +10,11 @@ function Employee (ID, fullName, department, level, pic){
     employees.push(this)
 }
 // let companyDepartment = ["Administration", "Marketing", "Development", "Finance"]  might need this later
-let employeesLevels = ["Junior", "Mid-Senior", "Senior"]
+let employeesLevels = ["junior", "mid-senior", "senior"]
 
 Employee.prototype.salary= function () {
     for (let i=0; i<employeesLevels.length; i++)
-    if (this.level === employeesLevels[i]){
+    if (this.level.toLowerCase () === employeesLevels[i]){
         this.salary = Math.random()*500+(500*(i+1)+1)
         this.salary-= this.salary*0.075
         return this.salary=Math.floor(this.salary)}}
