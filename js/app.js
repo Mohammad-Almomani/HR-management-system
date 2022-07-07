@@ -14,11 +14,13 @@ let employeesLevels = ["junior", "mid-senior", "senior"]
 
 Employee.prototype.salary= function () {
     for (let i=0; i<employeesLevels.length; i++)
-    if (this.level.toLowerCase () === employeesLevels[i]){
-        this.salary = Math.random()*500+(500*(i+1)+1)
-        return this.salary=  Math.floor(this.salary- this.salary*0.075)}}
+         if (this.level.toLowerCase () === employeesLevels[i]){
+            return this.salary = Math.random()*500+(500*(i+1)+1)}}
 
-Employee.prototype.printInfo = function () { document.write(`<p>${this["Full Name"]}: ${this.salary()} JD</p>`)}
+Employee.prototype.netSalary= function () { this.salary();
+        return this.netSalary=  Math.floor(this.salary- this.salary*0.075)}
+
+Employee.prototype.printInfo = function () { document.write(`<p>${this["Full Name"]}: ${this.netSalary()} JD</p>`)}
 
 const ghaziSamer = new Employee (1000, "Ghazi Samer", "Administration", "Senior","");
 const lanaAli = new Employee (1001, "Lana Ali", "Finance", "Senior","");
@@ -28,8 +30,8 @@ const omarZaid = new Employee (1004, "Omar Zaid", "Development", "Senior","");
 const ranaSaleh = new Employee (1005, "Rana Saleh", "Development", "Junior","");
 const hadiAhmad = new Employee (1006, "Hadi Ahmad", "Finance", "Mid-Senior","");
 
-function printEmployeesinfo () {
+function printEmployeesInfo () {
 for (let i=0; i<employees.length;i++){
-employees[i].printInfo()
-}}
-printEmployeesinfo()
+employees[i].printInfo()}}
+
+printEmployeesInfo()
