@@ -8,7 +8,6 @@ function Employee (ID, fullName, department, level){
     this.level = level;
     employees.push(this)
 }
-// let companyDepartment = ["Administration", "Marketing", "Development", "Finance"]  might need this later
 let employeesLevels = ["junior", "mid-senior", "senior"]
 
 // calculate the salray
@@ -47,16 +46,54 @@ Employee.prototype.netSalary= function () { this.salary();
             main.style.margin="0px"
             main.style.padding="0px"
 
+            const Administration = document.createElement("div")
+            Administration.classList.add("administration")
+            const Marketing = document.createElement("div")
+            Marketing.classList.add("marketing")
+            const Development = document.createElement("div")
+            Development.classList.add("development")
+            const Finance = document.createElement("div")
+            Finance.classList.add("finance")
+           
+            main.append(Administration, Marketing, Development, Finance);
+            let companyDepartment = ["Administration", "Marketing", "Development", "Finance"];
+            let companyDepartmentDivs = [Administration, Marketing, Development, Finance];
+
+
+            const headerAdministration = document.createElement("h1");
+            const headerMarketing = document.createElement("h1");
+            const headerDevelopment = document.createElement("h1");
+            const headerFinance = document.createElement("h1");
+            let headers = [headerAdministration, headerMarketing, headerDevelopment, headerFinance]
+             // append the headers to the departmentsDivs
+            for (let i=0; i<companyDepartmentDivs.length;i++){
+                companyDepartmentDivs[i].append(headers[i])
+            }
+
+            headerAdministration.textContent = "Administration Department"
+            headerMarketing.textContent = "Marketing Department"
+            headerDevelopment.textContent = "Development Department"
+            headerFinance.textContent = "Finance Department"
+
+
+
+
+            // header.style.marginTop = "20%"
+            // header.style.textAlign = "center"
+
             // use DOM to create the main body of our HTML
             function renderMain() {
             for (let j=0; j<imgSrc.length;j++){
+                // creat div for each department
+                for (let i=0; i<companyDepartment.length;i++){
+                if (employeesFinalInfo[j].includes(companyDepartment[i])){
                 // create a div for each employee 
                 const employeeDiv = document.createElement("div")
                 employeeDiv.style.marginTop ="3%"
                 employeeDiv.style.marginBottom ="4%"
                 employeeDiv.style.display = "flex"
                 employeeDiv.style.textAlign= "center"
-                main.append(employeeDiv)
+                companyDepartmentDivs[i].append(employeeDiv)
                 //create a div for the mployee card and append the picture<img> and the info<p> to it, and do some styling
                 const employeeInfoParagraph = document.createElement("div")
                 employeeInfoParagraph.classList.add("employeeCard");
@@ -78,6 +115,8 @@ Employee.prototype.netSalary= function () { this.salary();
            employeeInfoParagraph.append(info)
             }
             }
+        }
+    }
 
             renderMain()
 
