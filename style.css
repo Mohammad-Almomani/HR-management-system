@@ -1,8 +1,4 @@
 body {
-/* background-image: url(https://hrcareerconsultants.com/wp-content/uploads/2021/06/Hr-career-consultants-1200x497.jpg) ; */
-/* background-size: 200%px; */
-/* border: 2px solid black;
-padding: 25px; */
 background-repeat: no-repeat;
 background-size: cover;
 background-size: auto;
@@ -32,9 +28,8 @@ background-color: #47B5FF;
     display:block;
     font-size: large;
     flex: content;
-    font-family: 'Times New Roman', Times, serif;
+    font-family:  'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-align: left;
-    
   }
 
 .employeeCard:hover > p {
@@ -42,22 +37,20 @@ background-color: #47B5FF;
     opacity: 1;
   }
   
-    .employeePic {
+.employeePic {
       float: left;
       margin-right: 10px;
+      padding-left: 10px;
       clear:both;
   }
 
-
-
   .fot_nav_bar{
     position: sticky;
-    top: 0;
-    /* z-index: 100; */
-
+    top: 0; 
+    margin: 0px;
+    padding: 0px;
     margin-top: 20%; 
     padding-bottom: 5%; 
     background-image: url(https://wallpaperaccess.com/full/2053215.jpg);
-    
   }
 

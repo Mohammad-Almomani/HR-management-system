@@ -1,5 +1,5 @@
 "use strict";
-
+// create a constructor 
 const employees =[];
 function Employee (ID, fullName, department, level){
     this["Employee ID"] = ID;
@@ -11,17 +11,19 @@ function Employee (ID, fullName, department, level){
 // let companyDepartment = ["Administration", "Marketing", "Development", "Finance"]  might need this later
 let employeesLevels = ["junior", "mid-senior", "senior"]
 
+// calculate the salray
 Employee.prototype.salary= function () {
     for (let i=0; i<employeesLevels.length; i++)
          if (this.level.toLowerCase () === employeesLevels[i]){
             return this.salary = Math.random()*500+(500*(i+1)+1)}}
 
+// calculate the salary after the tax
 Employee.prototype.netSalary= function () { this.salary();
         return this.netSalary=  Math.floor(this.salary- this.salary*0.075)}
 
+// save employees info in one array
         let employeesFinalInfo =[];
         Employee.prototype.printInfo = function () {
-            //  let x = (`<p>${this["Full Name"]}: ${this.netSalary()} JD</p>`)
             employeesFinalInfo.push (`<br><br>Name: ${this["Full Name"]}<br>ID: ${this["Employee ID"]}<br>Department: ${this.Department}<br>Level: ${this.level}<br>Salary: ${this.netSalary()} JD`)
             }
         
@@ -33,94 +35,49 @@ Employee.prototype.netSalary= function () { this.salary();
         const ranaSaleh = new Employee (1005, "Rana Saleh", "Development", "Junior");
         const hadiAhmad = new Employee (1006, "Hadi Ahmad", "Finance", "Mid-Senior");
         
-        
+        // trigger the info and fill the array
         function printEmployeesInfo () {
             for (let i=0; i<employees.length;i++){
                 employees[i].printInfo()}
             }
             printEmployeesInfo()
-            
-            // Employee.prototype.imag = function () {
-                //     for (let i=0; i<employeesLevels.length; i++){
-                    //             this.Picture.src = this.pic
-                    //     }
-                    
-                    // }
-                    
             let imgSrc = ["./assets/Ghazi.jpg","./assets/Lana.jpg","./assets/Tamara.jpg","./assets/Safi.jpg","./assets/Omar.jpg","./assets/Rana.jpg","./assets/Hadi.jpg"]
                     
             const main = document.getElementById("main")
             main.style.margin="0px"
             main.style.padding="0px"
-            
+
+            // use DOM to create the main body of our HTML
+            function renderMain() {
             for (let j=0; j<imgSrc.length;j++){
-                const printDiv = document.createElement("div")
-                // printDiv.style.backgroundColor="red"
-                printDiv.style.marginTop ="5%"
-                printDiv.style.marginBottom ="7.5%"
-                printDiv.style.display = "flex"
-                printDiv.style.textAlign= "center"
-            
-                // printDiv.style.backgroundColor="silver"
-
-                main.append(printDiv)
-                const para = document.createElement("div")
-                para.classList.add("employeeCard");
-                // para.style.marginRight = "40%"
-                // para.style.marginLeft = ""
-                para.style.margin = "20px 35% 20px 35%"
-                para.style.paddingTop = "50px"
-                para.style.borderRadius = "20px"
-
-               
-
-                // para.style.backgroundColor = "green"
-
-
-            const gimg = document.createElement("img")
-            gimg.classList.add("employeePic");
-            printDiv.append(para)
-            gimg.src=imgSrc[j]
-            gimg.style.width = "250px";
-
-
-            // gimg.style.display = "inline-block"
-            // gimg.style.padding = "10px"
-            gimg.style.borderRadius = "150px"
-            // gimg.style.padding="50px"
-            // gimg.style.backgroundColor="red"            
-            para.append(gimg)
-            // console.log(employees[0])
-            // const breaka = document.createElement("a")
-            // breaka.textContent = "brasfaflkn"
+                // create a div for each employee 
+                const employeeDiv = document.createElement("div")
+                employeeDiv.style.marginTop ="3%"
+                employeeDiv.style.marginBottom ="4%"
+                employeeDiv.style.display = "flex"
+                employeeDiv.style.textAlign= "center"
+                main.append(employeeDiv)
+                //create a div for the mployee card and append the picture<img> and the info<p> to it, and do some styling
+                const employeeInfoParagraph = document.createElement("div")
+                employeeInfoParagraph.classList.add("employeeCard");
+                employeeInfoParagraph.style.margin = "20px 35% 20px 35%"
+                // employeeInfoParagraph.style.paddingLeft = "5px"
+                employeeInfoParagraph.style.paddingTop = "50px"
+                employeeInfoParagraph.style.borderRadius = "20px"
+            const employeeImg = document.createElement("img")
+            employeeImg.classList.add("employeePic");
+            employeeDiv.append(employeeInfoParagraph)
+            employeeImg.src=imgSrc[j]
+            employeeImg.style.width = "250px";
+            employeeImg.style.borderRadius = "150px"
+            employeeInfoParagraph.append(employeeImg)
             const info = document.createElement("p")
             info.style.padding ="50px"
             info.classList.add("emplyeeInfo");
             info.innerHTML = employeesFinalInfo[j]
-           para.append(info)
+           employeeInfoParagraph.append(info)
+            }
             }
 
+            renderMain()
 
-
-          console.log(employeesFinalInfo)
-        //   document.write(`${employeesFinalInfo[1]}`)
-
-
-
-            // const printMain = document.getElementById("mainDiv")
-            // printMain.append(printDiv)
-
-        // printMain.textContent = "kpafmpkad"
-
-        
-//    printEmployeesInfo()
-
-
-
-//    const main = document.main
-//    const div1 = document.createElement("div")
-//    const br = document.createElement("br")
-//    br.innerText = "hi"
-
-//    div1.append(br)
-//    main.append(div1)
