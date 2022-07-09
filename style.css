@@ -1,0 +1,63 @@
+body {
+/* background-image: url(https://hrcareerconsultants.com/wp-content/uploads/2021/06/Hr-career-consultants-1200x497.jpg) ; */
+/* background-size: 200%px; */
+/* border: 2px solid black;
+padding: 25px; */
+background-repeat: no-repeat;
+background-size: cover;
+background-size: auto;
+background-color: #47B5FF;
+}
+
+
+.employeeCard{
+    background-image: url("./assets/id_card.jpg");
+    width: 00px;
+    height: 00px;
+ 
+    transition: width 0.75s, height 1.5s;
+}
+.employeeCard:hover{
+    width: 700px;
+    height: 300px;
+    background-image: url("./assets/id_card.jpg");
+}
+
+.employeeCard > p {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 2.5s ;
+    margin-left: 0px;
+    overflow:auto;
+    display:block;
+    font-size: large;
+    flex: content;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+    
+  }
+
+.employeeCard:hover > p {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+    .employeePic {
+      float: left;
+      margin-right: 10px;
+      clear:both;
+  }
+
+
+
+  .fot_nav_bar{
+    position: sticky;
+    top: 0;
+    /* z-index: 100; */
+
+    margin-top: 20%; 
+    padding-bottom: 5%; 
+    background-image: url(https://wallpaperaccess.com/full/2053215.jpg);
+    
+  }
+
