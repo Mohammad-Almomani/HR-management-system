@@ -48,7 +48,7 @@ function printEmployeesInfo () {
 printEmployeesInfo();
 let imgSrc = ["./assets/Ghazi.jpg","./assets/Lana.jpg","./assets/Tamara.jpg","./assets/Safi.jpg","./assets/Omar.jpg","./assets/Rana.jpg","./assets/Hadi.jpg"]
                     
-// create departments divs to sort employees by thier department
+// create departments divs to sort employees by their department
 const main = document.getElementById("main");
 let companyDepartments = ["Administration", "Marketing", "Development", "Finance"];
 let companyDepartmentDivs = [];

@@ -16,7 +16,7 @@ padding: 0px;
 /* referance for employee card transition https://stackoverflow.com/questions/3331353/transitions-on-the-css-display-property */
 .employeeCard{
     display: block;
-    background-image: url("./assets/id_card.jpg");
+    background-image: url("../assets/id_card.jpg");
     width: 00px;
     height: 120px;
     transition: width 0.75s, height 1.5s;
@@ -26,7 +26,7 @@ padding: 0px;
 .employeeCard:hover{
     width: 700px;
     height: 300px;
-    background-image: url("./assets/id_card.jpg");
+    background-image: url("../assets/id_card.jpg");
 }
 .employeeCard > p {
     visibility: hidden;
