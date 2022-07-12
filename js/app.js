@@ -80,6 +80,7 @@ function renderMain() {
                 const employeeInfoParagraph = document.createElement("div");
                 employeeInfoParagraph.classList.add("employeeCard");
                 const employeeImg = document.createElement("img");
+                employeeImg.setAttribute("alt",`${employees[j]["Full Name"]}`.toLowerCase());
                 employeeImg.classList.add("employeePic");
                 employeeDiv.append(employeeInfoParagraph);
                 employeeImg.src=imgSrc[j];
