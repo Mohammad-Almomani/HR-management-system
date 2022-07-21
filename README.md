@@ -1,5 +1,9 @@
 # HR-management-system
 
+
+created a website that calculate employees salaries depending on their level, and sort them by their departments
+
+
 ## tsak 9
 added app.js and rendered employees names with their salaries on the home page
 
